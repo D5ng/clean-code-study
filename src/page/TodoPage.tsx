@@ -1,7 +1,10 @@
+import TodoList from "components/todo-components/TodoList";
 import React from "react";
 
-const TodoPage = () => {
-  return <div>TodoPage</div>;
-};
-
-export default TodoPage;
+export default function TodoPage() {
+  return (
+    <main>
+      <TodoList />
+    </main>
+  );
+}
