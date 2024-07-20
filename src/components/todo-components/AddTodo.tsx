@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 
 interface AddTodoProps {
-  todoList: string[];
+  addTodo: (newTodo: string) => void;
 }
-export default function AddTodo({ todoList }: AddTodoProps) {
+export default function AddTodo({ addTodo }: AddTodoProps) {
   const [inputValue, setInputValue] = useState<string>("");
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -11,7 +11,7 @@ export default function AddTodo({ todoList }: AddTodoProps) {
     setInputValue(e.target.value);
   };
   const handleAddButtonClick = () => {
-    todoList[inputValue];
+    addTodo(inputValue);
   };
   return (
     <>
