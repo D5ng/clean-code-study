@@ -1,5 +1,6 @@
 import TodoList from "components/todo-components/TodoList";
 import React from "react";
+import styled from "styled-components";
 
 export default function TodoPage() {
   return (
@@ -8,3 +9,5 @@ export default function TodoPage() {
     </main>
   );
 }
+
+const MainContainter = styled.div``;
