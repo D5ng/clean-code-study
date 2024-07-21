@@ -1,5 +1,6 @@
 import React, { useContext, useState } from "react";
 import TodoItemContext from "./TodoItemContext";
+import { Todo } from "./Todo.styles";
 
 interface TodoItemProps {
   todoList: string[];
@@ -24,14 +25,14 @@ const Checkbox = ({ value }: CheckboxProps) => {
     }
   };
   return (
-    <li>
-      <input
+    <Todo.CheckboxItem>
+      <Todo.StyledCheckbox
         type="checkbox"
         checked={selectedTodos.includes(value)}
         onChange={handleChange}
       />
       {value}
-    </li>
+    </Todo.CheckboxItem>
   );
 };
 
@@ -45,11 +46,11 @@ export default function TodoItem({ todoList }: TodoItemProps) {
 
   return (
     <TodoItemContext.Provider value={value}>
-      <ul>
+      <Todo.TodoListContainer>
         {todoList.map((item, index) => (
           <TodoItem.Checkbox key={index} value={item} />
         ))}
-      </ul>
+      </Todo.TodoListContainer>
     </TodoItemContext.Provider>
   );
 }
