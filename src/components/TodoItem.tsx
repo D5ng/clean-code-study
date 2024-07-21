@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import TodoItemContext from "./TodoItemContext";
 
 interface TodoItemProps {
@@ -9,7 +9,7 @@ interface CheckboxProps {
 }
 
 const Checkbox = ({ value }: CheckboxProps) => {
-  const context = React.useContext(TodoItemContext);
+  const context = useContext(TodoItemContext);
 
   if (!context) {
     throw new Error("체크박스는 provider 안에서 사용해야합니다.");
@@ -37,7 +37,7 @@ const Checkbox = ({ value }: CheckboxProps) => {
 
 export default function TodoItem({ todoList }: TodoItemProps) {
   const [selectedTodos, setSelectedTodos] = useState<string[]>([]);
-  console.log(selectedTodos);
+
   const value = {
     selectedTodos,
     setSelectedTodos,
