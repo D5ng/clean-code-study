@@ -20,9 +20,11 @@ export default function TodoItem({ todoList }: TodoItemProps) {
     <TodoItemContext.Provider value={contextValue}>
       <Todo.TodoListContainer>
         {todoList.map((item, index) => (
-          <Checkbox key={index} value={item} />
+          <TodoItem.Checkbox key={index} value={item} />
         ))}
       </Todo.TodoListContainer>
     </TodoItemContext.Provider>
   );
 }
+
+TodoItem.Checkbox = Checkbox;
