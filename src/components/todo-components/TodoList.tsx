@@ -8,11 +8,15 @@ export default function TodoList() {
   const addTodo = (newTodo: string) => {
     setTodoList([...todoList, newTodo]);
   };
-
+  const handleResetClick = () => {
+    setTodoList([]);
+  };
   return (
     <>
-      <TodoItem todoList={todoList} />
+      <h1>Todo List</h1>
       <AddTodo addTodo={addTodo} />
+      <button onClick={handleResetClick}>초기화</button>
+      <TodoItem todoList={todoList} />
     </>
   );
 }

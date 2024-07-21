@@ -7,15 +7,18 @@ export default function AddTodo({ addTodo }: AddTodoProps) {
   const [inputValue, setInputValue] = useState<string>("");
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    console.log(e.target.value);
     setInputValue(e.target.value);
   };
   const handleAddButtonClick = () => {
-    addTodo(inputValue);
+    if (inputValue.trim() !== "") {
+      addTodo(inputValue);
+      setInputValue("");
+    }
   };
+
   return (
     <>
-      <input type="text" onChange={handleChange} />
+      <input type="text" onChange={handleChange} value={inputValue} />
       <button onClick={handleAddButtonClick}>추가</button>
     </>
   );
