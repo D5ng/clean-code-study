@@ -1,7 +1,7 @@
 import React, { ChangeEvent, KeyboardEvent, useState } from "react";
-import { Button } from "./Button.styles";
-import { Input } from "./Input.styles";
-import { Todo } from "./Todo.styles";
+import { Button } from "../styles/Button.styles";
+import { Input } from "../styles/Input.styles";
+import { Todo } from "../styles/Todo.styles";
 
 interface AddTodoProps {
   addTodo: (newTodo: string) => void;

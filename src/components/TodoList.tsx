@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import TodoItem from "./TodoItem";
 import AddTodo from "./AddTodo";
-import { Todo } from "./Todo.styles";
-import { Button } from "./Button.styles";
+import { Todo } from "../styles/Todo.styles";
+import { Button } from "../styles/Button.styles";
 
 export default function TodoList() {
   const [todoList, setTodoList] = useState<string[]>([]);

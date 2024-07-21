@@ -1,6 +1,6 @@
 import React, { useContext, useState } from "react";
 import TodoItemContext from "./TodoItemContext";
-import { Todo } from "./Todo.styles";
+import { Todo } from "../styles/Todo.styles";
 
 interface TodoItemProps {
   todoList: string[];
