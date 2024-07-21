@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import TodoItemContext from "./TodoItemContext";
+import SelectedItemContext from "./SelectedItemContext";
 import { Todo } from "../styles/Todo.styles";
 
 interface CheckboxProps {
@@ -7,13 +7,14 @@ interface CheckboxProps {
 }
 
 const Checkbox = ({ value }: CheckboxProps) => {
-  const context = useContext(TodoItemContext);
+  const context = useContext(SelectedItemContext);
 
   if (!context) {
     throw new Error("체크박스는 provider 안에서 사용해야합니다.");
   }
 
   const { selectedTodos, setSelectedTodos } = context;
+
   const handleChange = () => {
     if (selectedTodos.includes(value)) {
       setSelectedTodos(selectedTodos.filter((todo) => todo !== value));
@@ -22,12 +23,14 @@ const Checkbox = ({ value }: CheckboxProps) => {
     }
   };
 
+  const isSelected = selectedTodos.includes(value);
+
   return (
-    <Todo.CheckboxItem onClick={handleChange}>
+    <Todo.CheckboxItem>
       <Todo.StyledCheckbox
         type="checkbox"
-        checked={selectedTodos.includes(value)}
-        readOnly
+        checked={isSelected}
+        onChange={handleChange}
       />
       {value}
     </Todo.CheckboxItem>
