@@ -1,7 +1,7 @@
 import React, { useContext, useMemo, useState } from "react";
-import TodoItemContext from "./TodoItemContext";
+import TodoItemContext from "./TodoItemContext";
 import { Todo } from "../styles/Todo.styles";
-import Checkbox from "./\bCheckbox";
+import Checkbox from "./Checkbox";
 
 interface TodoItemProps {
   todoList: string[];

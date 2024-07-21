@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import TodoItemContext from "./TodoItemContext";
+import TodoItemContext from "./TodoItemContext";
 import { Todo } from "../styles/Todo.styles";
 
 interface CheckboxProps {
