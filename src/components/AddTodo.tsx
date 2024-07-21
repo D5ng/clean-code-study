@@ -1,4 +1,4 @@
-import React, { ChangeEvent, useState } from "react";
+import React, { ChangeEvent, KeyboardEvent, useState } from "react";
 import { Button } from "./Button.styles";
 import { Input } from "./Input.styles";
 import { Todo } from "./Todo.styles";
@@ -18,10 +18,20 @@ export default function AddTodo({ addTodo }: AddTodoProps) {
       setInputValue("");
     }
   };
+  const handleKeyDown = (event: KeyboardEvent<HTMLInputElement>) => {
+    if (event.key === "Enter") {
+      handleAddButtonClick();
+    }
+  };
 
   return (
     <Todo.InputContainer>
-      <Input.AddTodo type="text" onChange={handleChange} value={inputValue} />
+      <Input.AddTodo
+        type="text"
+        onChange={handleChange}
+        onKeyDown={handleKeyDown}
+        value={inputValue}
+      />
       <Button.Add onClick={handleAddButtonClick}>추가</Button.Add>
     </Todo.InputContainer>
   );
