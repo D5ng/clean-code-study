@@ -17,7 +17,7 @@ const InputContainer = styled.div`
 `;
 
 // TodoList Item Styles
-const CheckboxItem = styled.li`
+const CheckboxItem = styled.label`
   display: flex;
   align-items: center;
   margin: 8px 0;
@@ -35,6 +35,39 @@ const CheckboxItem = styled.li`
 
 const StyledCheckbox = styled.input.attrs({ type: "checkbox" })`
   margin-right: 8px;
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border: 2px solid #007bff;
+  border-radius: 4px;
+  background-color: #fff;
+  cursor: pointer;
+  transition: background-color 0.3s, border-color 0.3s;
+
+  &:checked {
+    background-color: #007bff;
+    border-color: #007bff;
+    &::before {
+      content: "✔";
+      color: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+      width: 100%;
+      font-size: 14px;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+  }
+
+  &:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25);
+  }
+
+  position: relative;
 `;
 
 const TodoListContainer = styled.div`
