@@ -47,10 +47,24 @@ const TodoListContainer = styled.div`
   padding: 16px;
 `;
 
+const NotTodoMessage = styled.p`
+  font-size: 18px;
+  color: #555;
+  text-align: center;
+  margin: 20px 0;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  background-color: #f9f9f9;
+  font-weight: 500;
+  line-height: 1.5;
+`;
+
 export const Todo = {
   MainContainer,
   InputContainer,
   CheckboxItem,
   StyledCheckbox,
   TodoListContainer,
+  NotTodoMessage,
 };

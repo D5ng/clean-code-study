@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import TodoItem from "./TodoItem";
 import AddTodo from "./AddTodo";
-import styled from "styled-components";
 import { Todo } from "./Todo.styles";
 import { Button } from "./Button.styles";
 
@@ -14,11 +13,18 @@ export default function TodoList() {
   const handleResetClick = () => {
     setTodoList([]);
   };
+
   return (
     <Todo.MainContainer>
       <h1>Todo List</h1>
       <AddTodo addTodo={addTodo} />
-      <TodoItem todoList={todoList} />
+      {todoList.length === 0 ? (
+        <Todo.NotTodoMessage>
+          할 일이 없습니다. 할 일 목록을 추가해주세요 ✨
+        </Todo.NotTodoMessage>
+      ) : (
+        <TodoItem todoList={todoList} />
+      )}
       <Button.Reset onClick={handleResetClick}>초기화</Button.Reset>
     </Todo.MainContainer>
   );
